@@ -1,0 +1,9 @@
+{% block title %}
+<title>Blogs app</title>
+{% endblock title %}
+{% block content %}
+<h1>Books To Read</h1>
+{% for i in object_list %}
+<h2>{{i}}</h2>{{i.body}}<br><h2>-By {{i.author}}</h2>
+{% endfor %}
+{% endblock content %}
