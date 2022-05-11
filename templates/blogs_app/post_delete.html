@@ -1,0 +1,7 @@
+{% extends 'blogs_app/base.html' %}
+{% block content %}
+<form action="" method="post">{% csrf_token %}
+    <p>are you sure u want to delete this post" :- <strong>{{post.title}}</strong>"</p>
+    <input type="submit" value="confirm">
+</form>
+{% endblock content %}

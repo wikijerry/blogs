@@ -1,9 +1,14 @@
-{% block title %}
-<title>Blogs app</title>
-{% endblock title %}
+{% extends 'blogs_app/base.html' %}
 {% block content %}
-<h1>Books To Read</h1>
+{% if user.is_authenticated %}
 {% for i in object_list %}
-<h2>{{i}}</h2>{{i.body}}<br><h2>-By {{i.author}}</h2>
-{% endfor %}
+        <div class="post-entry">
+            <a href=" {% url 'post_details' i.pk %} "><h1>{{i.title}}</h1></a><br>
+            <p>{{i.body}}</p><br>
+            <h4>by:- {{i.author}}</h4>
+        </div>
+    {% endfor %}
+{% endif %}
+    
 {% endblock content %}
+ 

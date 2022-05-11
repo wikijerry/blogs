@@ -1,0 +1,11 @@
+{% extends 'blogs_app/base.html' %}
+{% block content %}
+<div class='post-entry'>
+    <h2><u>{{object.title}}</u></h2>    
+    <img src="{{object.img}}" alt="">
+    <p>{{object.body}}</p>
+    <h2>By- {{object.author}}</h2>
+</div>
+<a href="{% url 'post_edit' post.pk %}"><button type="button" class="btn btn-primary btn-lg">Edit</button></a>
+<a href="{% url 'post_delete' post.pk %}"><button type="button" class="btn btn-danger btn-lg">Delete</button></a>
+{% endblock content %}
